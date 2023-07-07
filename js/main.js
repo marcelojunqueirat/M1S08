@@ -1,7 +1,9 @@
+import {usuarios} from './dados.js';
 import createHeader from "./header.js";
 import createCards from "./card.js";
 import createOptions from "./selectOption.js";
 import submitForm from "./form.js";
+import validarLogin from "./login.js";
 
 /* Dados */
 let menus = ['Todos os remédios', 'Sobre nós', 'Fale conosco'];
@@ -75,11 +77,14 @@ let assuntos = ['Selecione', 'Comercial', 'Dúvidas', 'Revenda'];
 /* Elementos */
 let header = document.getElementsByTagName('header')[0];
 let cardBody = document.querySelector('#card-body');
-let assuntoElement = document.getElementById('assunto')
-let formElement = document.querySelector('form')
+let assuntoElement = document.getElementById('assunto');
+let formElement = document.getElementById('formulario-contato');
+let formLoginElement = document.getElementById('login-form')
 
 /* Criação */
-createHeader(header, logo, menus);
+if (header != null) {
+  createHeader(header, logo, menus);
+}
 
 if (cardBody != null) {
   createCards(cardBody, medicamentos.length, medicamentos);
@@ -90,6 +95,9 @@ if (assuntoElement != null) {
 }
 
 if (formElement != null) {
-  submitForm(formElement)
+  submitForm(formElement);
 }
 
+if (formLoginElement != null) {
+  validarLogin(formLoginElement, usuarios);
+}
