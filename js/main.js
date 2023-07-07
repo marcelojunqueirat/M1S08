@@ -1,3 +1,4 @@
+import auth from './auth.js'
 import {usuarios} from './dados.js';
 import createHeader from "./header.js";
 import createCards from "./card.js";
@@ -79,7 +80,12 @@ let header = document.getElementsByTagName('header')[0];
 let cardBody = document.querySelector('#card-body');
 let assuntoElement = document.getElementById('assunto');
 let formElement = document.getElementById('formulario-contato');
-let formLoginElement = document.getElementById('login-form')
+let formLoginElement = document.getElementById('login-form');
+
+/* Valida autenticação */
+if(!formLoginElement){
+  auth();
+}
 
 /* Criação */
 if (header != null) {
