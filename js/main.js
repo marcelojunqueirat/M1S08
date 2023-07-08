@@ -81,9 +81,10 @@ let cardBody = document.querySelector('#card-body');
 let assuntoElement = document.getElementById('assunto');
 let formElement = document.getElementById('formulario-contato');
 let formLoginElement = document.getElementById('login-form');
+let formCadastroElement = document.getElementById('cadastro-form');
 
 /* Valida autenticação */
-if(!formLoginElement){
+if(!formLoginElement && !formCadastroElement){
   auth();
 }
 
