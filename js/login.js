@@ -9,9 +9,9 @@ function validarUsuarioESenha(e, usuarios){
   const email = document.querySelector('input[name="email"]');
   const senha = document.querySelector('input[name="senha"]');
 
-  const listaUsuarios = JSON.parse(usuarios);
+  let listaUsuarios = JSON.parse(usuarios);
 
-  const [usuarioEncontrado] = listaUsuarios.filter(usuario => usuario.email == email.value);
+  let [usuarioEncontrado] = listaUsuarios.filter(usuario => usuario.email == email.value);
 
   if (!usuarioEncontrado) {
     alert("Email não cadastrado!");

@@ -1,10 +1,11 @@
-import auth from './auth.js'
+import auth from './auth.js';
 import {usuarios} from './dados.js';
 import createHeader from "./header.js";
 import createCards from "./card.js";
 import createOptions from "./selectOption.js";
 import submitForm from "./form.js";
 import validarLogin from "./login.js";
+import cadastroUsuario from './cadastroUsuario.js';
 
 /* Dados */
 let menus = ['Todos os remédios', 'Sobre nós', 'Fale conosco'];
@@ -107,4 +108,8 @@ if (formElement != null) {
 
 if (formLoginElement != null) {
   validarLogin(formLoginElement, usuarios);
+}
+
+if (formCadastroElement != null) {
+  cadastroUsuario(formCadastroElement, usuarios);
 }
